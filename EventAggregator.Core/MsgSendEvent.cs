@@ -9,6 +9,6 @@ namespace EventAggregator.Core
 {
     public class MsgSendEvent : PubSubEvent<string>
     {
-
+        
     }
 }
