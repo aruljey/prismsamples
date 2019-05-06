@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="ModuleA.MessageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ModuleA"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True" Padding="25">
+    <StackPanel>
+        <!--<StackPanel.Resources>
+            <local:MessageViewModel x:Key="MessageViewModel"></local:MessageViewModel>
+        </StackPanel.Resources>
+        <StackPanel.DataContext>
+            <Binding Source="{StaticResource MessageViewModel}"/>
+        </StackPanel.DataContext>-->
+        <TextBox Text="{Binding Message}"  Margin="5"/>
+        <Button  Content="Send Message" Command="{Binding Path=SendMessageCommand}" Margin="5"/>
+    </StackPanel>
+</UserControl>
