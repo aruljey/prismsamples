@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleB", "ModuleB\ModuleB.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventAggregator.Core", "EventAggregator.Core\EventAggregator.Core.csproj", "{B1F1997C-DBA1-49FE-8152-CC80EC5CD14E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.CRUDOperation", "6.CRUDOperation", "{30AB6A88-85AE-4360-BB5B-6AEF8CAD4735}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFCrud", "WPFCrud\WPFCrud.csproj", "{E35B965C-1693-4895-ADDC-8EB095ED0657}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +89,10 @@ Global
 		{B1F1997C-DBA1-49FE-8152-CC80EC5CD14E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1F1997C-DBA1-49FE-8152-CC80EC5CD14E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1F1997C-DBA1-49FE-8152-CC80EC5CD14E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35B965C-1693-4895-ADDC-8EB095ED0657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35B965C-1693-4895-ADDC-8EB095ED0657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35B965C-1693-4895-ADDC-8EB095ED0657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35B965C-1693-4895-ADDC-8EB095ED0657}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +109,7 @@ Global
 		{BA523C01-1371-499A-B90C-05BDED1EE357} = {19A00C2C-8BE5-4C7E-A03C-C4F64773F965}
 		{47906967-2484-4FFC-916E-DC01C2D97F48} = {19A00C2C-8BE5-4C7E-A03C-C4F64773F965}
 		{B1F1997C-DBA1-49FE-8152-CC80EC5CD14E} = {19A00C2C-8BE5-4C7E-A03C-C4F64773F965}
+		{E35B965C-1693-4895-ADDC-8EB095ED0657} = {30AB6A88-85AE-4360-BB5B-6AEF8CAD4735}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97C1C2BF-A268-432C-AD1C-99493DCC611F}
