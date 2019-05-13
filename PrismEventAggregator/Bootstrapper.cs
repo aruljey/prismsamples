@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using EventAggregator.Core;
+using Microsoft.Practices.ServiceLocation;
 using ModuleA;
 using ModuleB;
 using Prism.Mef;
@@ -13,6 +15,7 @@ namespace PrismEventAggregator
 {
     public class Bootstrapper : MefBootstrapper
     {
+
         protected override DependencyObject CreateShell()
         {
             return this.Container.GetExportedValue<MainWindow>();
@@ -25,13 +28,17 @@ namespace PrismEventAggregator
             Application.Current.MainWindow.Show();
         }
 
+        
+
         protected override void ConfigureAggregateCatalog()
         {
             base.ConfigureAggregateCatalog();
             this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(GetType().Assembly));
             this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(ModuleAModule).Assembly));
-
             this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(ModuleBModule).Assembly));
+            this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(MsgSendEvent).Assembly));
         }
+
+        
     }
 }

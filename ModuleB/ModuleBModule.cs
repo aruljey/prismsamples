@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.Composition;
+using EventAggregator.Core;
 
 namespace ModuleB
 {
@@ -15,13 +16,16 @@ namespace ModuleB
     public class ModuleBModule : IModule
     {
 
-        IRegionManager _regionManager;
+        private readonly IRegionManager _regionManager;
 
         [ImportingConstructor]
         public ModuleBModule(IRegionManager regionManager)
         {
             _regionManager = regionManager;
         }
+
+
+
         public void Initialize()
         {
             IRegionManager region = _regionManager.RegisterViewWithRegion("RightRegion", typeof(MessageList));

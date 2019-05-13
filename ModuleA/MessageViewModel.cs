@@ -53,7 +53,8 @@ namespace ModuleA
 
         private void SendMessage()
         {
-            _ea.GetEvent<MsgSendEvent>().Publish(Message);
+            //_ea.GetEvent<MsgSendEvent>().Publish(Message);
+            EventAggregatorService.EventService.GetEvent<MsgSendEvent>().Publish(Message);
         }
     }
 }

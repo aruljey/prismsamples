@@ -7,19 +7,22 @@ using Prism.Modularity;
 using Prism.Mef.Modularity;
 using Prism.Regions;
 using System.ComponentModel.Composition;
+using EventAggregator.Core;
 
 namespace ModuleA
 {
     [ModuleExport(typeof(ModuleAModule))]
     public class ModuleAModule : IModule
     {
-        IRegionManager _regionManager;
+        private readonly IRegionManager _regionManager;
 
         [ImportingConstructor]
         public ModuleAModule(IRegionManager regionManager)
         {
             _regionManager = regionManager;
         }
+
+
         public void Initialize()
         {
             IRegionManager region = _regionManager.RegisterViewWithRegion("LeftRegion", typeof(MessageView));

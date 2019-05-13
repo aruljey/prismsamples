@@ -109,6 +109,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EventAggregator.Core\EventAggregator.Core.csproj">
+      <Project>{B1F1997C-DBA1-49FE-8152-CC80EC5CD14E}</Project>
+      <Name>EventAggregator.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModuleA\ModuleA.csproj">
       <Project>{ba523c01-1371-499a-b90c-05bded1ee357}</Project>
       <Name>ModuleA</Name>
