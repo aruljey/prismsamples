@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://www.codeplex.com/prism"
         xmlns:local="clr-namespace:WPFCrud"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" WindowState="Normal"
         SnapsToDevicePixels="True" Closing="WindowClosing" Loaded="WindowLoaded" Title="Wpf Crud" Height="600" Width="800">
@@ -30,5 +31,48 @@
         <TextBlock MouseWheel="UIElement_OnMouseWheel" Margin="10,0" FontWeight="Bold" FontSize="24" Foreground="White" MouseDown="TextBlockMouseDown" VerticalAlignment="Center">My WPF CRUD</TextBlock>
         </StackPanel>
         <TextBlock Name="TimeLabel" Grid.Row="0" Grid.Column="1" Margin="10,5,10,0" FontSize="18" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Lucida Console">Time</TextBlock>
+        <TabControl Style="{StaticResource BorderlessTabControlStyle}" Margin="0" Padding="0" Grid.ColumnSpan="2" SelectedIndex="0" Name="MainTabControl">
+            <TabControl.ItemContainerStyle>
+                <Style TargetType="{x:Type TabItem}">
+                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                </Style>
+            </TabControl.ItemContainerStyle>
+        </TabControl>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" Background="LightGray">
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="16"></Setter>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <ItemsControl Grid.Column="0" prism:RegionManager.RegionName="UserRegion" Name="UserRegion" Background="Transparent">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
+            <ItemsControl Grid.Column="1" prism:RegionManager.RegionName="MessageRegion" Name="MessageRegion" Background="Transparent">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
+            <ItemsControl Grid.Column="3" prism:RegionManager.RegionName="RightUserRegion" Name="RightUserRegion" Background="Transparent">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </Grid>
     </Grid>
 </Window>
